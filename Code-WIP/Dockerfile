@@ -9,3 +9,5 @@ RUN pip3 install -r requirements.txt
 RUN python -m spacy download en
 RUN pip3 install --user rasa==2.1.2
 RUN pip3 install --user sanic==19.9.0
+RUN rasa train
+ENTRYPOINT [ “rasa”, “run”, “-p”, “8080”]
